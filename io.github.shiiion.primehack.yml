@@ -66,11 +66,13 @@ modules:
         url: https://github.com/Unrud/xdg-screensaver-shim/archive/0.0.2.tar.gz
         sha256: 0ed2a69fe6ee6cbffd2fe16f85116db737f17fb1e79bfb812d893cf15c728399
 
-  - name: icon
+  - name: stuff
     buildsystem: simple
     build-commands:
       - mkdir -p /app/share/icons/hicolor/scalable/apps/
       - cp icon.svg /app/share/icons/hicolor/scalable/apps/dolphin-emu.svg
+      - mkdir -p /app/bin
+      - echo 'echo hello' > /app/bin/primehack-wrapper
     sources:
       - type: file
         path: icon.svg
@@ -85,8 +87,8 @@ modules:
       - -DDISTRIBUTOR=Flathub
     cleanup:
       - /share/man
-    # post-install:
-    #   # - install -D primehack-wrapper /app/bin/primehack-wrapper
+    post-install:
+      - install -D primehack-wrapper /app/bin/primehack-wrapper
     #   # - install -Dm644 appdata.xml /app/share/appdata/primehack.appdata.xml
     #   # - rm /app/share/icons/hicolor/scalable/apps/dolphin-emu.svg
     #   # - mv /app/share/applications/dolphin-emu.desktop /app/share/applications/primehack.desktop
