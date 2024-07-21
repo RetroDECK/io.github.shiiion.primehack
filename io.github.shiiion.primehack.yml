@@ -71,8 +71,8 @@ modules:
     build-commands:
       - cp icon.svg /app/share/icons/hicolor/scalable/apps/dolphin-emu.svg
     sources:
-      type: file
-      path: icon.svg
+      - type: file
+        path: icon.svg
 
   - name: dolphin-emu
     buildsystem: cmake-ninja
