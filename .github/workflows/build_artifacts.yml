@@ -42,7 +42,7 @@ jobs:
             --install-deps-from=flathub-beta \
             --repo=${GITHUB_WORKSPACE}/primehack-repo \
             "${GITHUB_WORKSPACE}"/primehack-build-dir \
-            io.github.shiiion.primehack.yaml
+            io.github.shiiion.primehack.yml
 
       - name: "Exporting dir tree"
         id: tree
