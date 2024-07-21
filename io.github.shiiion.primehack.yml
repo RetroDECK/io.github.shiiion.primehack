@@ -69,6 +69,7 @@ modules:
   - name: icon
     buildsystem: simple
     build-commands:
+      - mkdir -p /app/share/icons/hicolor/scalable/apps/
       - cp icon.svg /app/share/icons/hicolor/scalable/apps/dolphin-emu.svg
     sources:
       - type: file
