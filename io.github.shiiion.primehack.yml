@@ -80,7 +80,7 @@ modules:
       - install -D primehack-wrapper /app/bin/primehack-wrapper
       - install -Dm644 appdata.xml /app/share/appdata/primehack.appdata.xml
       - rm /app/share/icons/hicolor/scalable/apps/dolphin-emu.svg || echo "Icon top be deleted not found, skipping"
-      - mv /app/share/applications/dolphin-emu.desktop /app/share/applications/primehack.desktop
+      - mv /app/share/applications/dolphin-emu.desktop /app/share/applications/primehack.desktop || echo "Desktop file to be renamed not found, skipping"
       - desktop-file-edit --set-key=Exec --set-value='primehack-wrapper' /app/share/applications/primehack.desktop
       - desktop-file-edit --set-key=Name --set-value='PrimeHack' /app/share/applications/primehack.desktop
     sources:
